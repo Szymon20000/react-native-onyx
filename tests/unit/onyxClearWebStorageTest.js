@@ -18,7 +18,7 @@ describe('Set data while storage is clearing', () => {
 
     beforeAll(() => {
         // Force using WebStorage provider for these tests
-        jest.mock('../../lib/storage');
+        jest.mock('../../lib/storage', () => jest.requireActual('../../lib/storage/WebStorage'));
         Onyx = require('../../lib/Onyx').default;
     });
 
